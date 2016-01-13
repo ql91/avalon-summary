@@ -46,4 +46,4 @@
 </html>
 ```
 运行结果：
-![](https://github.com/ql91/avalon-summary/tree/master/avalon%E5%A4%8D%E9%80%89%E6%A1%86%E5%A4%84%E7%90%860/avalon checkbox.gif)
+![](https://github.com/ql91/avalon-summary/tree/master/avalon%E5%A4%8D%E9%80%89%E6%A1%86%E5%A4%84%E7%90%8/avalon checkbox.gif)
