@@ -52,7 +52,8 @@
 ```
 <label ms-repeat="eventTypeTitleList">
 <input type="checkbox" name="eveTypeTitle"  ms-duplex="titleList"
-   ms-click="getEventTitleList(el)" ms-attr-value="el.EventTitle" style="display: inline-block;width:30px;margin-left: 30px;">{{el.EventTitle}}
+   ms-click="getEventTitleList(el)" ms-attr-value="el.EventTitle" 
+   style="display: inline-block;width:30px;margin-left: 30px;">{{el.EventTitle}}
 </label>
 
 ```
