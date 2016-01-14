@@ -45,7 +45,7 @@
 </body>
 </html>
 ```
-运行结果：
+##运行结果##
 ![](https://github.com/ql91/avalon-summary/blob/master/avalon%E5%A4%8D%E9%80%89%E6%A1%86%E5%A4%84%E7%90%86/avalon%20checkbox.gif)
 
 我们看到了avalon对数进行了绑定处理。那么我的问题出错在哪呢？我在点选每个复选框的时候添加了<mark>ms-click</mark>事件。
