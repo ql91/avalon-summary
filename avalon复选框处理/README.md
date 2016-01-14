@@ -47,3 +47,37 @@
 ```
 运行结果：
 ![](https://github.com/ql91/avalon-summary/blob/master/avalon%E5%A4%8D%E9%80%89%E6%A1%86%E5%A4%84%E7%90%86/avalon%20checkbox.gif)
+
+我们看到了avalon对数进行了绑定处理。那么我的问题出错在哪呢？我在点选每个复选框的时候添加了<mark>ms-click</mark>事件。
+```
+<label ms-repeat="eventTypeTitleList">
+<input type="checkbox" name="eveTypeTitle"  ms-duplex="titleList"
+   ms-click="getEventTitleList(el)" ms-attr-value="el.EventTitle" style="display: inline-block;width:30px;margin-left: 30px;">{{el.EventTitle}}
+</label>
+
+```
+```
+var vm = avalon.define({
+        $id: "demo",
+        eventTypeTitleList: data,
+        titleList: [],
+        getEventTitleList: function (vals) {//ms-click事件的方法
+            if (vm.titleList.indexOf(vals.EventTitle) == -1){
+               vm.titleList.push(vals.EventTitle);
+               console.log("添加"+vals.EventTitle);
+            }else{
+              for(var i=0;i<vm.titleList.length;i++){
+                   if(vals.EventTitle==vm.titleList[i]){
+                       vm.titleList.splice(i,1);
+                       console.log("删除"+vals.EventTitle);
+                   }
+               }
+            }
+        }
+});
+```
+没错，问题来了。本身avalon已经进行绑定对titleList这个数组处理了，我又多写了一个处理方法，多此一举了。然后就出现在 *“360游览器”*      *复选框按钮不可选* （实际是执行了 6-84行，接着 执行了 9行，即为选中后又被取消掉了）此图不贴
+
+## 总结 ##
+---
+眼睛所能看到的都不是问题的根源，需要仔细排查代码
