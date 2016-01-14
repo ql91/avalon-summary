@@ -5,7 +5,7 @@
 ---
 在做后台有盟数据查询板块的时候犯了一个低级的错误，在没找出这个错误的时候还以为是游览器兼容性的问题，但解决这个问题后，果然还是自己的代码出了问题，下面来细细的回顾整理下。
 ## 代码 ##
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,7 +49,7 @@
 ![](https://github.com/ql91/avalon-summary/blob/master/avalon%E5%A4%8D%E9%80%89%E6%A1%86%E5%A4%84%E7%90%86/avalon%20checkbox.gif)
 
 我们看到了avalon对数进行了绑定处理。那么我的问题出错在哪呢？我在点选每个复选框的时候添加了<mark>ms-click</mark>事件。
-```
+```javascript
 <label ms-repeat="eventTypeTitleList">
 <input type="checkbox" name="eveTypeTitle"  ms-duplex="titleList"
    ms-click="getEventTitleList(el)" //对，就是这里
@@ -57,7 +57,7 @@
 </label>
 
 ```
-```
+```javascript
 var vm = avalon.define({
         $id: "demo",
         eventTypeTitleList: data,
