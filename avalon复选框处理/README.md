@@ -52,8 +52,8 @@
 ```
 <label ms-repeat="eventTypeTitleList">
 <input type="checkbox" name="eveTypeTitle"  ms-duplex="titleList"
-   ms-click="getEventTitleList(el)" ms-attr-value="el.EventTitle" 
-   style="display: inline-block;width:30px;margin-left: 30px;">{{el.EventTitle}}
+   ms-click="getEventTitleList(el)" //对，就是这里
+   ms-attr-value="el.EventTitle" style="display: inline-block;width:30px;margin-left: 30px;">{{el.EventTitle}}
 </label>
 
 ```
@@ -77,7 +77,7 @@ var vm = avalon.define({
         }
 });
 ```
-没错，问题来了。本身avalon已经进行绑定对titleList这个数组处理了，我又多写了一个处理方法，多此一举了。然后就出现在 *“360游览器”*      *复选框按钮不可选* （实际是执行了 6-84行，接着 执行了 9行，即为选中后又被取消掉了）此图不贴
+没错，问题来了。本身avalon已经进行绑定对titleList这个数组处理了，我又多写了一个处理方法，多此一举了。然后就出现在 *“360游览器”*      *复选框按钮不可选* （实际是执行了 if 条件，接着 执行了 else 条件，即为选中后又被取消掉了）此图不贴
 
 ## 总结 ##
 ---
